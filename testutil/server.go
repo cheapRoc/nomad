@@ -30,6 +30,7 @@ import (
 // TestServerConfig is the main server configuration struct.
 type TestServerConfig struct {
 	NodeName          string        `json:"name,omitempty"`
+	Datacenter        string        `json:"datacenter,omitempty"`
 	DataDir           string        `json:"data_dir,omitempty"`
 	Region            string        `json:"region,omitempty"`
 	DisableCheckpoint bool          `json:"disable_update_check"`
@@ -75,7 +76,8 @@ type ServerConfig struct {
 
 // ClientConfig is used to configure the client
 type ClientConfig struct {
-	Enabled bool `json:"enabled"`
+	Enabled bool              `json:"enabled"`
+	Meta    map[string]string `json:"meta,omitempty"`
 }
 
 // VaultConfig is used to configure Vault
